@@ -295,9 +295,9 @@ footer {
 
 #work-history {
     padding-left: 20px;
-    max-height: 28em;
-    overflow-x: auto;
-    overflow-y: auto;
+    max-height: 29em;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 .history-heading {
