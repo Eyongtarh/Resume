@@ -293,6 +293,13 @@ footer {
 
 /* ----------------------------------------Work History */
 
+#work-history {
+    padding-left: 20px;
+    max-height: 28em;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
 .history-heading {
     color: #fafafa;
     margin-bottom: 50px;
