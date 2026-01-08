@@ -20,18 +20,11 @@
       type="text/css"
     />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    <title>Rosie</title>
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"
-    ></script>
-    <script type="text/javascript">
+    <title>Eyongtarh</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
       (function () {
-        emailjs.init("user_vanqZMkpPOADQP2iEpqKS");
-        emailjs.send("gmail", "rosie", {
-          name: "Aaron",
-          notes: "The project that I want is...",
-        });
+        emailjs.init("4QId-00iSkyJe1ASu");
       })();
     </script>
   </head>
@@ -45,7 +38,7 @@
         <div class="col-md-8">
           <div class="row no-gutters bg-color-name-title">
             <div class="col heading">
-              <h1 class="name">Rosie Odenkirk</h1>
+              <h1 class="name">A. Eyongtarh Besong</h1>
               <h2 class="title">Full Stack Developer</h2>
             </div>
           </div>
@@ -106,6 +99,7 @@
           <h5 class="uppercase text-center">Let's work together</h5>
         </div>
         <div class="center-form">
+          <div id="form-message" class="alert" style="display:none;"></div>
           <form onsubmit="return sendMail(this);">
             <input
               type="text"

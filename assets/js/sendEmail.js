@@ -1,17 +1,27 @@
-function sendMail(contactForm) {
+function sendMail(form) {
+  const name = form.name.value;
+
   emailjs
-    .send("gmail", "rosie", {
-      from_name: contactForm.name.value,
-      from_email: contactForm.emailaddress.value,
-      project_request: contactForm.projectsummary.value,
+    .send("service_7tybh4n", "template_nycydzn", {
+      name: name,
+      email: form.emailaddress.value,
+      title: form.projectsummary.value,
     })
     .then(
-      function (response) {
-        console.log("SUCCESS", response);
+      function () {
+        const msg = document.getElementById("form-message");
+        msg.className = "alert alert-success";
+        msg.innerHTML = `Thank you <strong>${name}</strong>! Your message has been sent successfully. We’ll get back to you shortly.`;
+        msg.style.display = "block";
+        form.reset();
       },
-      function (error) {
-        console.log("FAILED", error);
+      function () {
+        const msg = document.getElementById("form-message");
+        msg.className = "alert alert-danger";
+        msg.innerHTML = "Oops! Something went wrong. Please try again.";
+        msg.style.display = "block";
       }
     );
-  return false; // To block from loading a new page
+
+  return false;
 }

@@ -1,29 +1,29 @@
 function initMap() {
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 3,
-    center: {
-      lat: 46.619261,
-      lng: -33.134766,
-    },
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center: { lat: 57.7089, lng: 11.9746 }, // Gothenburg
   });
 
-  var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  var locations = [
-    { lat: 40.785091, lng: -73.968285 },
-    { lat: 41.084045, lng: -73.874245 },
-    { lat: 40.754932, lng: -73.984016 },
+  // Example locations in Gothenburg
+  const locations = [
+    { lat: 57.7089, lng: 11.9746 }, // Central Gothenburg
+    { lat: 57.7065, lng: 11.9670 }, // Haga
+    { lat: 57.7209, lng: 11.9896 }, // Ullevi
+    { lat: 57.6950, lng: 11.9916 }, // Liseberg
   ];
 
-  var markers = locations.map(function (location, i) {
+  const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
       label: labels[i % labels.length],
+      map: map,
     });
   });
 
-  var markerCluster = new MarkerClusterer(map, markers, {
-    imagePath:
-      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  new markerClusterer.MarkerClusterer({
+    map,
+    markers,
   });
 }
