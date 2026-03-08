@@ -113,11 +113,24 @@ header {
 }
 
 .logo {
-  background: url("../images/eyongtarh.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 70%;
+  background-image: 
+    url("../images/eyongtarh.png"),
+    url("../images/computer.png");
+  
+  background-position: 
+    center,
+    center;
+  
+  background-repeat: 
+    no-repeat,
+    no-repeat;
+  
+  background-size: 
+    70%,
+    cover;
+  
   min-height: 360px;
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
