@@ -67,6 +67,11 @@ body {
   color: #555555;
 }
 
+.groups-row {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .bg-color-groups .groups-row {
   display: flex;
   flex-wrap: wrap;
